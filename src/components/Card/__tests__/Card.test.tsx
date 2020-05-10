@@ -1,5 +1,5 @@
 import React from "react";
-import Card from "../Card/Card";
+import Card from "../Card";
 import "@testing-library/jest-dom";
 import { render } from "@testing-library/react";
 

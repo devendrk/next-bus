@@ -25,6 +25,7 @@ const App: React.FC<Stops> = () => {
   if (result.loading) {
     return <div>Loading .....</div>;
   }
+  console.log("data", result.data);
   const nextBuses = result.data.stops[0].stoptimesWithoutPatterns;
   const stopName = result.data.stops[0].name;
   const stopNumber = result.data.stops[0].code;

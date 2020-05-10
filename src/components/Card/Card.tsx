@@ -1,4 +1,6 @@
 import React from "react";
+
+import { convertTimeFormat } from "../../utils";
 import styles from "./Card.module.css";
 
 interface NextBusses {
@@ -15,16 +17,6 @@ interface CardProps {
 }
 
 const Card: React.FC<CardProps> = ({ nextBuses, stopNumber, stopName }) => {
-  /**
-   * @param {number} arrivalTime  time in seconds from last 00:00 ( 12:00 am)
-   * @returns {string}
-   */
-  const getArrivalTime = (arrivalTime: number): string => {
-    var date = new Date(0);
-    date.setSeconds(arrivalTime);
-    var timeString = date.toISOString().substr(11, 5);
-    return timeString;
-  };
   const renderSchedule = () => {
     return nextBuses.map((nb: any) => (
       <div
@@ -32,7 +24,7 @@ const Card: React.FC<CardProps> = ({ nextBuses, stopNumber, stopName }) => {
         key={nb.headsign.length * nb.scheduledArrival}
       >
         <p>{nb.headsign}</p>
-        <p>{getArrivalTime(nb.scheduledArrival)}</p>
+        <p>{convertTimeFormat(nb.scheduledArrival)}</p>
       </div>
     ));
   };
