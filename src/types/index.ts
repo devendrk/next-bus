@@ -1,6 +1,10 @@
+export interface Route {
+  shortName: string;
+}
 export interface Bus {
   scheduledArrival: number;
   headsign: string;
+  trip: { route: Route };
 }
 
 export interface Stop {

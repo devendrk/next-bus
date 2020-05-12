@@ -1,5 +1,5 @@
 import React from "react";
-import BusSchedule from "../BusSchedule/BusSchedule";
+import BusSchedule from "../BusSchedule/index";
 import styles from "./Card.module.css";
 
 interface NextBusses {
@@ -23,6 +23,7 @@ const Card: React.FC<CardProps> = ({ nextBuses, stopNumber, stopName }) => {
       </h1>
       <div className={styles.cardSubHeader}>
         <p>Heading to</p>
+        <p>Line</p>
         <p>Arrives at </p>
       </div>
       <BusSchedule nextBuses={nextBuses} />

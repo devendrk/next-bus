@@ -15,7 +15,8 @@ const BusSchedule: React.FC<Props> = ({ nextBuses }) => {
           className={styles.cardBody}
           key={nb.headsign.length * nb.scheduledArrival}
         >
-          <p>{nb.headsign}</p>
+          <p>{nb.trip.route.shortName}</p>
+          <p className="short-name">{nb.headsign}</p>
           <p>{convertTimeFormat(nb.scheduledArrival)}</p>
         </div>
       ))}

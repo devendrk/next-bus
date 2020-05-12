@@ -1,12 +1,16 @@
 import React from "react";
-import { gql, useQuery } from "@apollo/client";
+import { useQuery } from "@apollo/client";
 
 import { Data } from "./types/index";
-import Card from "./components/Card/Card";
+import Card from "./components/Card";
 import styles from "./App.module.css";
 
+import { FIND_NEXT_LINE } from "./queries";
+
 const App: React.FC = () => {
-  const result = useQuery<Data | any>(query);
+  const result = useQuery<Data | any>(FIND_NEXT_LINE, {
+    pollInterval: 30000, // Refetch the data every 30 seconds
+  });
 
   if (result.loading) {
     return <div>Loading .....</div>;
@@ -23,17 +27,3 @@ const App: React.FC = () => {
 };
 
 export default App;
-
-const query = gql`
-  query {
-    stops(name: "V6104") {
-      id
-      name
-      code
-      stoptimesWithoutPatterns {
-        scheduledArrival
-        headsign
-      }
-    }
-  }
-`;
