@@ -1,31 +1,17 @@
 import React from "react";
 import { gql, useQuery } from "@apollo/client";
-import Card from "./components/Card/Card";
 
+import { Data } from "./types/index";
+import Card from "./components/Card/Card";
 import styles from "./App.module.css";
 
-interface Stops {
-  id?: string;
-  name?: string;
-  code?: string;
-  stoptimesWithoutPatterns?: {
-    scheduledArrival?: number;
-    headsign?: string;
-  }[];
-}
-interface Data {
-  data: {
-    aa: Stops[];
-  };
-}
-
-const App: React.FC<Stops> = () => {
+const App: React.FC = () => {
   const result = useQuery<Data | any>(query);
 
   if (result.loading) {
     return <div>Loading .....</div>;
   }
-  console.log("data", result.data);
+  console.log("result...", result.data);
   const nextBuses = result.data.stops[0].stoptimesWithoutPatterns;
   const stopName = result.data.stops[0].name;
   const stopNumber = result.data.stops[0].code;
