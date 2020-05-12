@@ -1,18 +1,16 @@
 import React from "react";
-import BusSchedule from "../BusSchedule/index";
+import BusSchedule from "../BusSchedule";
 import styles from "./Card.module.css";
 
-interface NextBusses {
-  scheduledArrival: number;
-  headsign: string;
-}
+import { stoptimesWithoutPatterns } from "../../types/index";
+
 interface CardProps {
   /** Name of the stop */
   stopName: string;
   /** Bus stop code  */
   stopNumber: string;
   /** List of  all busses that will arrives to this Bus stop */
-  nextBuses: NextBusses[];
+  nextBuses: stoptimesWithoutPatterns[];
 }
 
 const Card: React.FC<CardProps> = ({ nextBuses, stopNumber, stopName }) => {
