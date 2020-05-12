@@ -8,7 +8,6 @@ interface Props {
 }
 
 const BusSchedule: React.FC<Props> = ({ nextBuses }) => {
-  console.log("nnnnnnnnnnn", nextBuses);
   return (
     <div>
       {nextBuses.map((nb: any) => (

@@ -20,8 +20,8 @@ const Card: React.FC<CardProps> = ({ nextBuses, stopNumber, stopName }) => {
         {stopName} <span className={styles.stopNumber}>( {stopNumber} )</span>
       </h1>
       <div className={styles.cardSubHeader}>
-        <p>Heading to</p>
         <p>Line</p>
+        <p>Heading to</p>
         <p>Arrives at </p>
       </div>
       <BusSchedule nextBuses={nextBuses} />

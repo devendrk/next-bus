@@ -2,6 +2,7 @@ import React from "react";
 import { useQuery } from "@apollo/client";
 
 import Card from "./components/Card";
+import LeafLetMap from "./components/LeafletMap/LeafletMap";
 import styles from "./App.module.css";
 
 import { FIND_NEXT_LINE } from "./queries";
@@ -21,8 +22,8 @@ const App: React.FC = () => {
   const stopNumber = data.stops[0].code;
   return (
     <div className={styles.container}>
+      <LeafLetMap />
       <Card stopName={stopName} stopNumber={stopNumber} nextBuses={nextBuses} />
-      <h1>abcjd</h1>
     </div>
   );
 };
