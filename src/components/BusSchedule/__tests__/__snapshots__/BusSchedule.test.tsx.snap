@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Card /> BusSchedule 1`] = `
+<div>
+  <div>
+    <div
+      class="cardBody"
+    >
+      <p>
+        abc
+      </p>
+      <p
+        class="short-name"
+      >
+        Helsinki
+      </p>
+      <p>
+        01:10
+      </p>
+    </div>
+  </div>
+</div>
+`;

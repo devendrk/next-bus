@@ -10,8 +10,8 @@ interface Props {
 const BusSchedule: React.FC<Props> = ({ nextBuses }) => {
   return (
     <div>
-      {nextBuses.map((nb: any) => (
-        <div className={styles.cardBody} key={nb.trip.route.id}>
+      {nextBuses.map((nb: any, index: number) => (
+        <div className={styles.cardBody} key={index}>
           <p>{nb.trip.route.shortName}</p>
           <p className="short-name">{nb.headsign}</p>
           <p>{convertTimeFormat(nb.scheduledArrival)}</p>

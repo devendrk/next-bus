@@ -2,11 +2,9 @@ import React from "react";
 import "@testing-library/jest-dom";
 import { render } from "@testing-library/react";
 
-import Card from "..";
+import BusSchedule from "..";
 
 describe("<Card />", () => {
-  const stopName = "stopName";
-  const stopNumber = "V1056";
   const nextBuses = [
     {
       headsign: "Helsinki",
@@ -14,11 +12,8 @@ describe("<Card />", () => {
       trip: { route: { shortName: "abc", id: "abc" } },
     },
   ];
-
-  it("Card", () => {
-    const { container } = render(
-      <Card stopName={stopName} stopNumber={stopNumber} nextBuses={nextBuses} />
-    );
+  it("BusSchedule", () => {
+    const { container } = render(<BusSchedule nextBuses={nextBuses} />);
     expect(container).not.toBeNull();
     expect(container).toMatchSnapshot();
   });

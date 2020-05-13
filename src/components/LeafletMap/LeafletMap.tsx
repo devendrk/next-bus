@@ -3,13 +3,13 @@ import { Map, TileLayer, Marker } from "react-leaflet";
 import { LatLngTuple } from "leaflet";
 
 import styles from "./LeafletMap.module.css";
-const defaultLatLng: LatLngTuple = [60.29186, 25.04134];
+const defaultLocation: LatLngTuple = [60.29186, 25.04134];
 const zoom: number = 12;
 
 const LeafletMap: React.FC = ({ children }) => {
   return (
-    <Map id={styles.mapId} center={defaultLatLng} zoom={zoom}>
-      <Marker position={defaultLatLng} />
+    <Map id={styles.mapId} center={defaultLocation} zoom={zoom}>
+      <Marker position={defaultLocation} />
       <TileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'

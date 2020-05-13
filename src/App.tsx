@@ -9,21 +9,25 @@ import { FIND_NEXT_LINE } from "./queries";
 import { Data } from "./types/index";
 
 const App: React.FC = () => {
-  const { loading, data } = useQuery<Data | any>(FIND_NEXT_LINE, {
+  const { loading, error, data } = useQuery<Data | any>(FIND_NEXT_LINE, {
     pollInterval: 30000, // Refetch the data every 30 seconds
   });
 
   if (loading) {
-    return <div>Loading .....</div>;
+    return <h1 className={styles.loading}>Loading .....</h1>;
   }
-  console.log("result...", data);
-  const nextBuses = data.stops[0].stoptimesWithoutPatterns;
-  const stopName = data.stops[0].name;
-  const stopNumber = data.stops[0].code;
+  if (error)
+    return <h1 className={styles.error}>OOP some thing went wrong !</h1>;
+
+  const stopDetail = data.stops[0];
   return (
     <div className={styles.container}>
       <LeafLetMap />
-      <Card stopName={stopName} stopNumber={stopNumber} nextBuses={nextBuses} />
+      <Card
+        stopName={stopDetail.name}
+        stopNumber={stopDetail.code}
+        nextBuses={stopDetail.stoptimesWithoutPatterns}
+      />
     </div>
   );
 };
