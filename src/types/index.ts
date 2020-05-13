@@ -3,7 +3,7 @@ export interface Route {
   shortName: string;
 }
 
-export interface stoptimesWithoutPatterns {
+export interface StoptimesWithoutPatterns {
   scheduledArrival: number;
   headsign: string;
   trip: {
@@ -11,13 +11,13 @@ export interface stoptimesWithoutPatterns {
   };
 }
 
-export interface stops {
+export interface Stops {
   id: string;
   name: string;
   code: string;
-  stoptimesWithoutPatterns: stoptimesWithoutPatterns[];
+  stoptimesWithoutPatterns: StoptimesWithoutPatterns[];
 }
 
 export interface Data {
-  stops: stops[];
+  stops: Stops[];
 }

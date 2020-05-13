@@ -5,7 +5,7 @@ import { render } from "@testing-library/react";
 import BusSchedule from "..";
 
 describe("<Card />", () => {
-  const nextBuses = [
+  const nextBuses: any = [
     {
       headsign: "Helsinki",
       scheduledArrival: 4200,

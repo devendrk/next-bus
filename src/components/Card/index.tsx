@@ -2,7 +2,7 @@ import React from "react";
 import BusSchedule from "../BusSchedule";
 import styles from "./Card.module.css";
 
-import { stoptimesWithoutPatterns } from "../../types/index";
+import { Stops } from "../../types/index";
 
 interface CardProps {
   /** Name of the stop */
@@ -10,7 +10,7 @@ interface CardProps {
   /** Bus stop code  */
   stopNumber: string;
   /** List of  all busses that will arrives to this Bus stop */
-  nextBuses: stoptimesWithoutPatterns[];
+  nextBuses: Stops[];
 }
 
 const Card: React.FC<CardProps> = ({ nextBuses, stopNumber, stopName }) => {

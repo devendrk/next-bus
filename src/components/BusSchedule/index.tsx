@@ -3,8 +3,9 @@ import React from "react";
 import { convertTimeFormat } from "../../utils/index";
 import styles from "./BusSchedule.module.css";
 
+import { Stops } from "../../types";
 interface Props {
-  nextBuses: any;
+  nextBuses: Stops[];
 }
 
 const BusSchedule: React.FC<Props> = ({ nextBuses }) => {
